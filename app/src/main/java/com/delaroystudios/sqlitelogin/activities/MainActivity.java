@@ -11,8 +11,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.example.maste.ramen.Cart.createdDish;
-import static com.example.maste.ramen.Cart.identifier;
+import com.delaroystudios.sqlitelogin.R;
+import static com.delaroystudios.sqlitelogin.activities.Cart.identifier;
+import static com.delaroystudios.sqlitelogin.activities.Cart.createdDish;
+
+//import static com.example.maste.ramen.Cart.createdDish;
+//import static com.example.maste.ramen.Cart.identifier;
+
 
 public class MainActivity extends AppCompatActivity {
     static int dif;
@@ -209,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Home.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }//End onClick
         });//End homeBtn OnClickListener
 
