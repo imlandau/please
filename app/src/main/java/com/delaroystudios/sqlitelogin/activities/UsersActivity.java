@@ -12,20 +12,22 @@ import com.delaroystudios.sqlitelogin.R;
 public class UsersActivity extends AppCompatActivity {
 
     private TextView textViewName;
+    private Button btn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
-
+        Button btn = (Button) findViewById(R.id.btn);
         textViewName = (TextView) findViewById(R.id.text1);
         String nameFromIntent = getIntent().getStringExtra("EMAIL");
         textViewName.setText("Welcome " + nameFromIntent);
     }
-    Button btn = (Button) findViewById(R.id.btn);
-    btn.setOnClickListener(new View.OnClickListener() {
-        startActivity(new Intent(UsersActivity.this, Main.class));
-        } // end onClick
-    });
 
+    btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(UsersActivity.this, MainActivity.class));
+        }
+    });
 }
