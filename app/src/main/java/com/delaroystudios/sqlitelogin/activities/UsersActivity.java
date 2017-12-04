@@ -22,12 +22,13 @@ public class UsersActivity extends AppCompatActivity {
         textViewName = (TextView) findViewById(R.id.text1);
         String nameFromIntent = getIntent().getStringExtra("EMAIL");
         textViewName.setText("Welcome " + nameFromIntent);
+        TextView toMenuBtn = (TextView) findViewById(R.id.toMenuBtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UsersActivity.this, MainActivity.class));
+            }
+        });
     }
-
-    btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            startActivity(new Intent(UsersActivity.this, MainActivity.class));
-        }
-    });
 }
+
